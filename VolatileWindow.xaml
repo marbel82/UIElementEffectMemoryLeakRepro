@@ -1,0 +1,17 @@
+﻿<Window x:Class="UIElementEffectMemoryLeakRepro.VolatileWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UIElementEffectMemoryLeakRepro"
+        mc:Ignorable="d"
+        Title="VolatileWindow" Height="250" Width="400">
+    <Grid>
+        <!-- Effect set locally -->
+        <Border Margin="50" Background="AliceBlue">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20"/>
+            </Border.Effect>
+        </Border>
+    </Grid>
+</Window>

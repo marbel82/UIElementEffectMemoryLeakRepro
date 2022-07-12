@@ -1,0 +1,9 @@
+﻿<Application x:Class="UIElementEffectMemoryLeakRepro.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:UIElementEffectMemoryLeakRepro"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <DropShadowEffect x:Key="Application.Border.Shadow" BlurRadius="20"/>
+    </Application.Resources>
+</Application>
