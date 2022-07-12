@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="VolatileWindow" Height="250" Width="400">
     <Grid>
-        <!-- Effect set locally -->
+        <!-- Effect set locally, kept reference locally, so it doesn't cause a memory leak -->
         <Border Margin="50" Background="AliceBlue">
             <Border.Effect>
-                <DropShadowEffect BlurRadius="20"/>
+                <DropShadowEffect BlurRadius="{Binding Source={StaticResource Theme.Border.Shadow}, Path=BlurRadius}" />
             </Border.Effect>
         </Border>
     </Grid>

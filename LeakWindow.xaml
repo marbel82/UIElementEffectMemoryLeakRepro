@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="LeakWindow" Height="250" Width="400">
     <Grid>
-        <!-- Effect from resource -->
+        <!-- Effect from resource. It has IsFrozen == false -->
         <Border Margin="50" Background="AliceBlue" Effect="{StaticResource Application.Border.Shadow}"/>
     </Grid>
 </Window>

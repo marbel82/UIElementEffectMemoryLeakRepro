@@ -1,9 +1,24 @@
 ﻿<Application x:Class="UIElementEffectMemoryLeakRepro.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:UIElementEffectMemoryLeakRepro"
+             xmlns:local="clr-namespace:UIElementEffectMemoryLeakRepro" 
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <DropShadowEffect x:Key="Application.Border.Shadow" BlurRadius="20"/>
+
+        <sys:Double x:Key="DropShadowEffect.BlurRadius">20</sys:Double>
+
+        <!-- This object is Frozen -->
+        <DropShadowEffect x:Key="Theme.Border.Shadow" 
+                          BlurRadius="{StaticResource DropShadowEffect.BlurRadius}"/>
+        
+        <!-- This object is not Frozen -->
+        <DropShadowEffect x:Key="Application.Border.Shadow" 
+                          BlurRadius="{Binding Source={StaticResource Theme.Border.Shadow}, Path=BlurRadius}"/>
+
+        
+        <!-- For another example, this object is not Frozen too -->
+        <DropShadowEffect x:Key="Application.Border.Shadow2" 
+                          BlurRadius="{DynamicResource DropShadowEffect.BlurRadius}"/>
     </Application.Resources>
 </Application>
