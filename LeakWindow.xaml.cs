@@ -23,5 +23,10 @@ namespace UIElementEffectMemoryLeakRepro
         {
             InitializeComponent();
         }
+
+        ~LeakWindow()
+        {
+            Console.WriteLine("~LeakWindow()");
+        }
     }
 }

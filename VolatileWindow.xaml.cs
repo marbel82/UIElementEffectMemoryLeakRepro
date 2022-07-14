@@ -23,5 +23,9 @@ namespace UIElementEffectMemoryLeakRepro
         {
             InitializeComponent();
         }
+        ~VolatileWindow()
+        {
+            Console.WriteLine("~VolatileWindow()");
+        }
     }
 }
